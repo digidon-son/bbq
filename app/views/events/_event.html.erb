@@ -1,18 +1,10 @@
 <%# Паршиал для отображения инфы об отдельном событии %>
-<div class="col-sm-6 col-md-4">
-  <div class="thumbnail">
-
-    <%= content_tag 'div', '', class: 'event-background',
-                    style: "background-image: url(#{asset_path('event_thumb.jpg')})" %>
-
-    <div class="thumbnail-inner event-info-inner">
-      <div class="caption">
-        <div class="event-description">
-          <h3><%= link_to event.title, event_path(event) %></h3>
-          <h3><small><%= event.datetime %></small></h3>
-          <div class="buffer-both"><%= event.address %></div>
-        </div>
-      </div>
-    </div>
+<div class="card bg-dark text-white mt-3 m-lg-2", style="max-width: 350px;">
+  <%= image_tag 'event.jpg', class: 'card-img', alt: 'шашлыки', style: 'filter: blur(5px)' %>
+  <div class="card-img-overlay fw-bold">
+    <h3 class="card-title"><%= link_to event.title, event_path(event), class: 'link-light' %></h3>
+    <h4 class="card-text"><%= event.datetime %></h4>
+    <h4 class="card-text"><small><%= link_to event.address,
+                                             "https://yandex.ru/maps/?text=#{event.address}", class: 'link-light' %></small></h4>
   </div>
 </div>
