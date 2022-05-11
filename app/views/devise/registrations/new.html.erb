@@ -1,11 +1,5 @@
-<% if resource.errors.any? %>
-  <div class="alert alert-danger alert-dismissible">
-    <% resource.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-<% end %>
+<%= render 'devise/shared/error_messages' %>
+
 <div class="offset-md-4 offset-sm-3 col-sm-9">
   <h2>Регистрация</h2>
 
@@ -56,7 +50,7 @@
       </div>
     </div>
 
-    <%= f.submit "Зарегестрироваться", class: 'btn btn-success' %>
+    <%= f.submit "Зарегистрироваться", class: 'btn btn-success' %>
   <% end %>
   <%= link_to 'Войти', new_user_session_path, class: 'btn btn-primary mt-2' %>
 </div>
