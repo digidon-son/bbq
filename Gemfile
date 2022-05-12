@@ -5,11 +5,13 @@ ruby '3.1.1'
 
 gem 'bootsnap', require: false
 gem 'devise'
+gem 'devise-i18n'
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'cssbundling-rails'
 gem 'puma', '~> 5.0'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
+gem 'russian'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'

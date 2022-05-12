@@ -1,6 +1,15 @@
 <%# Паршиал дляотображения формы создания нового события %>
+<% if @event.errors.any? %>
+  <div class="alert alert-danger alert-dismissible">
+    <% @event.errors.each do |error| %>
+      <li><%= error.full_message %></li>
+    <% end %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
+
+
 <%= form_for(@event) do |f| %>
-  <%= render partial: 'partials/form_errors', locals: {model: @event} %>
 
   <div class="form-group">
     <%= f.label :title %>

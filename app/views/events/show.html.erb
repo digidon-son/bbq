@@ -3,7 +3,7 @@
   <%= image_tag 'event.jpg', class: 'card-img', alt: 'шашлыки', style: 'max-height: 200px; filter: blur(5px)' %>
   <div class="card-img-overlay fw-bold">
     <h1 class="card-title"><%= @event.title %></h1>
-    <h3 class="card-text"><%= @event.datetime %></h3>
+    <h3 class="card-text"><%= l @event.datetime, format: :short %></h3>
     <h3 class="card-text"><small><%= link_to @event.address,
                                             "https://yandex.ru/maps/?text=#{@event.address}", class: 'link-secondary' %></small></h3>
   </div>
