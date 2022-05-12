@@ -1,9 +1,8 @@
-<%= render 'devise/shared/error_messages' %>
-
 <div class="offset-md-4 offset-sm-3 col-sm-9">
   <h2>Авторизация</h2>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
+    <%= render 'devise/shared/error_messages' %>
     <div class="field mb-3 col-lg-4">
       <div><%= f.label :email, 'Электронная почта', class: 'form-label', id: 'emailauth' %></div>
       <div><%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', for: 'emailauth' %></div>
