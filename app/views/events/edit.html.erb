@@ -3,5 +3,7 @@
 <div class="row">
   <div class="col-md-6 buffer-top">
     <%= render 'form' %>
+    <%= button_to 'Удалить событие', event_path(@event), class: 'btn btn-danger mt-1', method: :delete,
+                  title: 'Удалить вопрос', form: { data: { turbo_confirm: 'Вы уверены?' } } %>
   </div>
 </div>
