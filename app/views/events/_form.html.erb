@@ -1,13 +1,16 @@
 <%# Паршиал дляотображения формы создания нового события %>
+
 <% if @event.errors.any? %>
   <div class="alert alert-danger alert-dismissible">
+    <%= I18n.t("errors.messages.not_saved",
+               count: @event.errors.count,
+               resource: @event.class.model_name.human) %>
     <% @event.errors.each do |error| %>
       <li><%= error.full_message %></li>
     <% end %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
 <% end %>
-
 
 <%= form_for(@event) do |f| %>
 
