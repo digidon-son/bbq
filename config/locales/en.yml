@@ -31,3 +31,5 @@
 
 en:
   hello: "Hello world"
+  confirm:
+    are_you_sure: 'Вы уверены?'

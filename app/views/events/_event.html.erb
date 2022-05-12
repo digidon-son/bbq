@@ -6,5 +6,6 @@
     <h4 class="card-text"><%= l event.datetime, format: :short %></h4>
     <h4 class="card-text"><small><%= link_to event.address,
                                              "https://yandex.ru/maps/?text=#{event.address}", class: 'link-light' %></small></h4>
+    <h4 class="card-text"><%= event.description %></h4>
   </div>
 </div>

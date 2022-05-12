@@ -4,6 +4,6 @@
   <div class="col-md-6 buffer-top">
     <%= render 'form' %>
     <%= button_to 'Удалить событие', event_path(@event), class: 'btn btn-danger mt-1', method: :delete,
-                  title: 'Удалить вопрос', form: { data: { turbo_confirm: 'Вы уверены?' } } %>
+                  title: 'Удалить вопрос', form: { data: { turbo_confirm: t('confirm.are_you_sure') } } %>
   </div>
 </div>
