@@ -1,11 +1,7 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 
-/*
-(с) goodprogrammer.ru
 
-Наши дополнительные стили для красивого оформления плитки событий
-*/
 
 .event-info {
   position: relative;
@@ -54,10 +50,9 @@
   height: 400px;
 }
 
-Наши дополнительные стили для оформления отступов и тамбинашек картинок
-*/
 
-/* Buffers */
+
+
 .buffer-top {
   margin-top: 20px;
 }
@@ -71,14 +66,14 @@
   margin-bottom: 20px;
 }
 
-/* Avatars for users & events */
+
 .img-icon, .img-icon-small {
   height: 50px;
   width: auto;
   border-radius: 50%;
 }
 
-/* Thumbnails for events/index */
+
 .thumbnail {
   position: relative;
   background: transparent;
