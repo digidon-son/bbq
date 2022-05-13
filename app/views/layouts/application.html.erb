@@ -27,7 +27,8 @@
       <ul class="navbar-nav">
         <% if user_signed_in? %>
           <li class="nav-item"><%= button_to 'Профиль', current_user, method: :get, class: 'btn btn-light' %></li>
-          <li class="nav-item"><%= button_to 'Выйти', destroy_user_session_path, method: :delete, class: 'btn btn-light' %></li>
+          <li class="nav-item"><%= button_to 'Выйти', destroy_user_session_path, method: :delete,
+                                             class: 'btn btn-light', data: { turbo: false } %></li>
         <% else %>
           <li class="nav-item"><%= link_to 'Войти', new_user_session_path, class: 'nav-link' %></li>
           <li class="nav-item"><%= link_to 'Зарегистрироваться', new_user_registration_path, class: 'nav-link' %></li>
