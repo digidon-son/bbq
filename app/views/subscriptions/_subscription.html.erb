@@ -1,10 +1,11 @@
+
 <span class="subscription">
   <% if subscription.user.present? %>
     <%= render partial: 'users/user', object: subscription.user %>
   <% else %>
     <em><%= subscription.user_name %></em>
   <% end %>
-  <% if current_user_can_edit?(subscription) %>
+  <% if current_user_has_access?(subscription) %>
      <%= button_to(
            'Удалить участника',
           event_subscription_path(subscription.event, subscription),
