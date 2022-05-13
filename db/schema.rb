@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_13_091136) do
   create_table "comments", force: :cascade do |t|
     t.text "body"
     t.string "user_name"
-    t.integer "event_id", null: false
+    t.integer "event_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -36,7 +36,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_13_091136) do
   create_table "subscriptions", force: :cascade do |t|
     t.string "user_name"
     t.string "user_email"
-    t.integer "event_id", null: false
+    t.integer "event_id"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

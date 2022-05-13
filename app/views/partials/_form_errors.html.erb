@@ -1,12 +1,16 @@
-<%# Универсальный паршиал отображения ошибок валидации любой модели %>
-<% if flash[:notice].present? %>
-  <div class="alert alert-success alert-dismissible">
-    <%= flash[:notice] %>
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
-<% elsif flash[:alert].present? %>
+<% errors = model.errors %>
+
+<% if errors.any? %>
   <div class="alert alert-danger alert-dismissible">
-    <%= flash[:alert] %>
+    <%= I18n.t("errors.messages.not_saved",
+               count: model.errors.count,
+               resource: model.class.model_name.human) %>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    <ul>
+      <% errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+
   </div>
 <% end %>

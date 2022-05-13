@@ -1,15 +1,6 @@
 <%= form_for @user, html: {multipart: true} do |f| %>
-  <% if @user.errors.any? %>
-    <div class="alert alert-danger alert-dismissible">
-      <%= I18n.t("errors.messages.not_saved",
-                 count: @user.errors.count,
-                 resource: @user.class.model_name.human) %>
-      <% @user.errors.each do |error| %>
-        <li><%= error.full_message %></li>
-      <% end %>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-  <% end %>
+
+  <%= render partial: 'partials/form_errors', locals: {model: @user} %>
 
 
   <div class="form-group mb-3">

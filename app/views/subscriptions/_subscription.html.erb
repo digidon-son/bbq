@@ -5,11 +5,11 @@
     <em><%= subscription.user_name %></em>
   <% end %>
   <% if current_user_can_edit?(subscription) %>
-    <%= link_to(
-          fa_icon('times'),
+     <%= button_to(
+           'Удалить участника',
           event_subscription_path(subscription.event, subscription),
           method: :delete,
-          data: {confirm: t('.destroy_confirm')}
+          data: {confirm: t('.destroy_confirm')}, class: 'btn-warning'
         ) %>
   <% end %>
 </span>
