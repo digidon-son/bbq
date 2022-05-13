@@ -1,6 +1,6 @@
 class Subscription < ApplicationRecord
   belongs_to :event
-  belongs_to :user, optional: true
+  belongs_to :user
 
   validates :event, presence: true
 
