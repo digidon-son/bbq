@@ -3,6 +3,7 @@ class Event < ApplicationRecord
 
   has_many :comments
   has_many :subscriptions
+  has_many :subscribers, through: :subscriptions, source: :user
 
   validates :user, presence: true
   validates :address, presence: true
