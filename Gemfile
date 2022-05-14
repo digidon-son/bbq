@@ -6,7 +6,6 @@ ruby '3.1.1'
 gem 'bootsnap', require: false
 gem 'devise'
 gem 'devise-i18n'
-gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'cssbundling-rails'
 gem 'puma', '~> 5.0'

@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
   def destroy
     message = {notice: I18n.t('controllers.comments.destroyed')}
 
-    if current_user_can_edit?(@comment)
+    if current_user_has_access?(@comment)
       @comment.destroy!
     else
       message = {alert: I18n.t('controllers.comments.error')}
