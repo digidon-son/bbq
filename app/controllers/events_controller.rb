@@ -23,24 +23,24 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
 
     if @event.save
-      format.html { redirect_to event_url(@event), notice: I18n.t('controllers.events.created') }
+      redirect_to event_url(@event), notice: I18n.t('controllers.events.created')
     else
-      format.html { render :new, status: :unprocessable_entity }
+      render :new, status: :unprocessable_entity
     end
   end
 
   def update
     if @event.update(event_params)
-      format.html { redirect_to event_url(@event), notice: I18n.t('controllers.events.updated') }
+      redirect_to event_url(@event), notice: I18n.t('controllers.events.updated')
     else
-      format.html { render :edit, status: :unprocessable_entity }
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @event.destroy
 
-    format.html { redirect_to events_url, notice: I18n.t('controllers.events.destroyed') }
+    redirect_to events_url, notice: I18n.t('controllers.events.destroyed')
   end
 
   private

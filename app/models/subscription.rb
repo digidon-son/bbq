@@ -9,6 +9,8 @@ class Subscription < ApplicationRecord
   validates :user_email, uniqueness: {scope: :event_id}, unless: -> { user.present? }
   validates :user, uniqueness: {scope: :event_id}, if: -> { user.present? }
 
+  validate :email_in_use
+
   def user_name
     if user.present?
       user.name
@@ -22,6 +24,14 @@ class Subscription < ApplicationRecord
       user.email
     else
       super
+    end
+  end
+
+  private
+
+  def email_in_use
+    if User.where("lower(email) = ?", self.user_email.downcase).first
+      errors.add(:user_email, 'занят')
     end
   end
 end
