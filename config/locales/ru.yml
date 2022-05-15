@@ -3,47 +3,54 @@ ru:
   activerecord:
     # Перевод названия моделей
     models:
-      user: 'Пользователь'
-      event: 'Событие'
       comment: 'Комментарий'
+      event: 'Событие'
+      photo: 'Фотография'
       subscription: 'Подписка'
+      user: 'Пользователь'
 
     # Перевод названий аттрибутов моделей
     attributes:
+      comment:
+        body: 'Поле комментария'
+        user_name: 'Имя пользователя'
+      event:
+        title: 'Название'
+        address: 'Место проведения'
+        datetime: 'Дата и время'
+        description: 'Описание'
+      photo:
+        photo: 'Фотография'
+      subscription:
+        user_name: 'Имя пользователя'
+        user_email: 'Email'
       user:
         avatar: 'Аватар'
         email: 'Email'
         name: 'Имя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
-      event:
-        title: 'Название'
-        address: 'Место проведения'
-        datetime: 'Дата и время'
-        description: 'Описание'
-      comment:
-        body: 'Поле комментария'
-        user_name: 'Имя пользователя'
-      subscription:
-        user_name: 'Имя пользователя'
-        user_email: 'Email'
 
   # Перевод сообщений, которые отправляет контроллер
   controllers:
-    events:
-      created: 'Вы создали новое мероприятие'
-      updated: 'Вы обновили мероприятие'
-      destroyed: 'Вы удалили мероприятие'
-    users:
-      updated: 'Вы обновили свой профиль'
     comments:
       destroyed: 'Комментарий удален'
       created: 'Ваш комментарий добавлен'
       error: 'Ошибка с комментарием'
+    events:
+      created: 'Вы создали новое мероприятие'
+      updated: 'Вы обновили мероприятие'
+      destroyed: 'Вы удалили мероприятие'
+    photos:
+      error: 'Что-то не так с фотографией'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотографию'
     subscriptions:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
+    users:
+      updated: 'Вы обновили свой профиль'
 
   # Перевод названия приложения и компании-разработчика
   app:
