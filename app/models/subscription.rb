@@ -30,7 +30,7 @@ class Subscription < ApplicationRecord
   private
 
   def email_in_use
-    if User.where("lower(email) = ?", self.user_email.downcase).first
+    if User.where("email = ?", self.user_email.downcase).first
       errors.add(:user_email, 'занят')
     end
   end
