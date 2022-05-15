@@ -11,6 +11,8 @@ class Subscription < ApplicationRecord
 
   validate :email_in_use
 
+  validate :organizer_cant_subscribe
+
   def user_name
     if user.present?
       user.name
@@ -33,5 +35,9 @@ class Subscription < ApplicationRecord
     if User.where("email = ?", self.user_email.downcase).first
       errors.add(:user_email, 'занят')
     end
+  end
+
+  def organizer_cant_subscribe
+    errors.add(:organizer, I18n.t('controllers.subscriptions.organizer')) if user == event.user
   end
 end

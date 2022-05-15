@@ -24,6 +24,7 @@ ru:
       subscription:
         user_email: 'Email'
         user_name: 'Имя пользователя'
+        organizer: 'Организатор'
       user:
         avatar: 'Аватар'
         email: 'Email'
@@ -49,6 +50,7 @@ ru:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
+      organizer: 'не может подписываться на своё событие'
     users:
       updated: 'Вы обновили свой профиль'
 
