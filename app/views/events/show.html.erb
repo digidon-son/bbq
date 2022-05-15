@@ -29,6 +29,9 @@
 
   <div class="row">
     <div class="col-md-8">
+      <div class="event-photo-form">
+        <%= render partial: 'photos/form', locals: { photo: @new_photo || @event.photos.build } %>
+      </div>
       <div class="event-comments buffer-top">
         <%= render partial: 'comments/form',
                    locals: { comment: @new_comment || @event.comments.build } %>
@@ -55,14 +58,14 @@
         </div>
       </div>
       <% unless current_user_has_access?(@event) %>
-      <div class="event-subscription-form">
-        <h4>Я пойду:</h4>
-        <div>
-          <%= render partial: 'subscriptions/form', locals: {
-            subscription: @new_subscription || @event.subscriptions.build
-          } %>
-        </div>
-        <% end %>
+        <div class="event-subscription-form">
+          <h4>Я пойду:</h4>
+          <div>
+            <%= render partial: 'subscriptions/form', locals: {
+              subscription: @new_subscription || @event.subscriptions.build
+            } %>
+          </div>
+      <% end %>
       </div>
     </div>
   </div>
