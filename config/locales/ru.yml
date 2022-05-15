@@ -11,6 +11,7 @@ ru:
     # Перевод названий аттрибутов моделей
     attributes:
       user:
+        avatar: 'Аватар'
         email: 'Email'
         name: 'Имя'
         password: 'Пароль'
