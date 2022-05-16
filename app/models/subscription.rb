@@ -32,8 +32,8 @@ class Subscription < ApplicationRecord
   private
 
   def email_in_use
-    if User.where("email = ?", self.user_email.downcase).first
-      errors.add(:user_email, 'занят')
+    if User.where(email: self.user_email.downcase).first
+      errors.add(:user_email, I18n.t('controllers.subscriptions.busy'))
     end
   end
 
