@@ -42,3 +42,4 @@
 .idea
 
 /public/uploads
+.env
