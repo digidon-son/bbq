@@ -274,7 +274,10 @@ DEPENDENCIES
   devise-i18n
   dotenv-rails
   fog-aws
+<<<<<<< HEAD
   letter_opener
+=======
+>>>>>>> 35cfe5a8cd638da3d44ae861ed00bfff1e98149e
   mailjet
   pg
   puma (~> 5.0)
