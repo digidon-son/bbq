@@ -25,10 +25,10 @@ class Subscription < ApplicationRecord
   private
 
   def email_in_use
-    errors.add(:user_email, I18n.t('controllers.subscriptions.busy')) if User.where(email: user_email.downcase).first
+    errors.add(:user_email, :busy) if User.where(email: user_email.downcase).first
   end
 
   def organizer_cant_subscribe
-    errors.add(:user, I18n.t('controllers.subscriptions.organizer')) if user == event.user
+    errors.add(:user, :organizer) if user == event.user
   end
 end

@@ -1,6 +1,14 @@
 ru:
   # Перевод моделей
   activerecord:
+    errors:
+      models:
+        subscription:
+          attributes:
+            user:
+              organizer: 'не может подписываться на своё событие'
+            user_email:
+              busy: 'занят. Попробуйте другой email'
     # Перевод названия моделей
     models:
       comment: 'Комментарий'
@@ -47,11 +55,9 @@ ru:
       destroyed: 'Вы удалили фотографию'
       error: 'Что-то не так с фотографией'
     subscriptions:
-      busy: 'занят. Попробуйте другой email'
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
       error: 'Подписка/отписка не сработала'
-      organizer: 'не может подписываться на своё событие'
     users:
       updated: 'Вы обновили свой профиль'
 
