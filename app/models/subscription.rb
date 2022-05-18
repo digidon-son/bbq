@@ -5,14 +5,17 @@ class Subscription < ApplicationRecord
   belongs_to :event
   belongs_to :user, optional: true
 
-  validates :user_name, presence: true, unless: -> { user.present? }
-  validates :user_email, presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/, unless: -> { user.present? }
-  validates :user_email, uniqueness: { scope: :event_id }, unless: -> { user.present? }
-  validates :user, uniqueness: { scope: :event_id }, if: -> { user.present? }
+  with_options if: -> { user.present? } do
+    validates :user, uniqueness: { scope: :event_id }
+    validate :organizer_cant_subscribe
+  end
 
-  validate :email_in_use
-
-  validate :organizer_cant_subscribe
+  with_options unless: -> { user.present? } do
+    validates :user_name, presence: true
+    validates :user_email, presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
+    validates :user_email, uniqueness: { scope: :event_id }
+    validate :email_in_use
+  end
 
   def user_name
     user&.name || super
