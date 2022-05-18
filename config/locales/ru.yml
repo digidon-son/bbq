@@ -24,7 +24,7 @@ ru:
       subscription:
         user_email: 'Email'
         user_name: 'Имя пользователя'
-        organizer: 'Организатор'
+        user: 'Пользователь'
       user:
         avatar: 'Аватар'
         email: 'Email'
