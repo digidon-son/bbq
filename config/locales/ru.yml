@@ -6,83 +6,91 @@ ru:
         subscription:
           attributes:
             user:
-              organizer: 'не может подписываться на своё событие'
+              organizer: "не может подписываться на своё событие"
             user_email:
-              busy: 'занят. Попробуйте другой email'
+              busy: "занят. Попробуйте другой email"
     # Перевод названия моделей
     models:
-      comment: 'Комментарий'
-      event: 'Событие'
-      photo: 'Фотография'
-      subscription: 'Подписка'
-      user: 'Пользователь'
+      comment: "Комментарий"
+      event: "Событие"
+      photo: "Фотография"
+      subscription: "Подписка"
+      user: "Пользователь"
 
     # Перевод названий аттрибутов моделей
     attributes:
       comment:
-        body: 'Поле комментария'
-        user_name: 'Имя пользователя'
+        body: "Поле комментария"
+        user_name: "Имя пользователя"
       event:
-        address: 'Место проведения'
-        datetime: 'Дата и время'
-        description: 'Описание'
-        title: 'Название'
+        address: "Место проведения"
+        datetime: "Дата и время"
+        description: "Описание"
+        title: "Название"
       photo:
-        photo: 'Фотография'
+        photo: "Фотография"
       subscription:
-        user_email: 'Email'
-        user_name: 'Имя пользователя'
-        user: 'Пользователь'
+        user_email: "Email"
+        user_name: "Имя пользователя"
+        user: "Пользователь"
       user:
-        avatar: 'Аватар'
-        email: 'Email'
-        name: 'Имя'
-        password: 'Пароль'
-        password_confirmation: 'Подтверждение пароля'
+        avatar: "Аватар"
+        email: "Email"
+        name: "Имя"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
 
   # Перевод сообщений, которые отправляет контроллер
   controllers:
     comments:
-      created: 'Ваш комментарий добавлен'
-      destroyed: 'Комментарий удален'
-      error: 'Ошибка с комментарием'
+      created: "Ваш комментарий добавлен"
+      destroyed: "Комментарий удален"
+      error: "Ошибка с комментарием"
     events:
-      destroyed: 'Вы удалили мероприятие'
-      created: 'Вы создали новое мероприятие'
-      updated: 'Вы обновили мероприятие'
+      destroyed: "Вы удалили мероприятие"
+      created: "Вы создали новое мероприятие"
+      updated: "Вы обновили мероприятие"
     photos:
-      created: 'Вы добавили фотографию к событию'
-      destroyed: 'Вы удалили фотографию'
-      error: 'Что-то не так с фотографией'
+      created: "Вы добавили фотографию к событию"
+      destroyed: "Вы удалили фотографию"
+      error: "Что-то не так с фотографией"
     subscriptions:
-      created: 'Вы подписаны на это событие'
-      destroyed: 'Участник отписан'
-      error: 'Подписка/отписка не сработала'
+      created: "Вы подписаны на это событие"
+      destroyed: "Участник отписан"
+      error: "Подписка/отписка не сработала"
     users:
-      updated: 'Вы обновили свой профиль'
+      updated: "Вы обновили свой профиль"
 
   # Перевод названия приложения и компании-разработчика
   app:
-    company: 'Хороший программист'
-    name: 'Шашлыки'
+    company: "Хороший программист"
+    name: "Шашлыки"
 
   # Перевод плашки подтверждения
   confirm:
-    are_you_sure: 'Вы уверены?'
+    are_you_sure: "Вы уверены?"
 
   # Переводы содержимого письма
   event_mailer:
     comment:
-      title: 'Новый комментарий'
-      author: 'Автор'
-      event: 'Событие'
-      datetime: 'Состоится'
-      owner: 'Организатор'
+      author: "Автор"
+      datetime: "Состоится"
+      event: "Событие"
+      owner: "Организатор"
+      title: "Новый комментарий"
     subscription:
-      title: 'Новая подписка'
-      name: 'Имя'
-      email: 'Email'
-      author: 'Автор'
-      event: 'Событие'
-      datetime: 'Состоится'
-      owner: 'Организатор'
+      author: "Автор"
+      datetime: "Состоится"
+      email: "Email"
+      event: "Событие"
+      name: "Имя"
+      owner: "Организатор"
+      title: "Новая подписка"
+    photo:
+      author: "Автор"
+      datetime: "Состоится"
+      event: "Событие"
+      name: "Имя"
+      owner: "Организатор"
+      title: "Новое фото"
+      photo: "Фотография"

@@ -1,0 +1,12 @@
+<%= t '.title' %>
+----
+
+<%= t '.name' %>: <%= @photo.user.name %>
+<%= t '.email' %>: <%= link_to @photo.user.email, "mailto:#{@email}" %>
+
+----------------------
+
+<%= t '.event' %> <%= @event.title %>
+<%= t '.datetime' %> <%= l @event.datetime %>
+<%= t '.owner' %> <%= @event.user.name %>
+<%= t '.photo' %> <%= link_to image_tag(@photo.photo.thumb.url), @photo.photo.url %>

@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  before_action :set_event, only: [:create, :destroy]
+  before_action :set_event, only: %i[create destroy]
   before_action :set_photo, only: [:destroy]
 
   # Обратите внимание: фотку может сейчас добавить даже неавторизованный пользовать
@@ -12,7 +12,9 @@ class PhotosController < ApplicationController
     @new_photo.user = current_user
 
     if @new_photo.save
-      # Если фотка сохранилась, редиректим на событие с сообщением
+      # Если фотка сохранилась, отправляем письмо подпи
+      notify_subscribers(@event, @new_photo)
+      # и редиректим на событие с сообщением
       redirect_to @event, notice: I18n.t('controllers.photos.created')
     else
       # Если нет — рендерим событие с ошибкой
@@ -21,7 +23,7 @@ class PhotosController < ApplicationController
   end
 
   def destroy
-    message = {notice: I18n.t('controllers.photos.destroyed')}
+    message = { notice: I18n.t('controllers.photos.destroyed') }
 
     # Проверяем, может ли пользователь удалить фотографию
     # Если может — удаляем
@@ -29,7 +31,7 @@ class PhotosController < ApplicationController
       @photo.destroy
     else
       # Если нет — сообщаем ему
-      message = {alert: I18n.t('controllers.photos.error')}
+      message = { alert: I18n.t('controllers.photos.error') }
     end
 
     # В любом случае редиректим юзера на событие
@@ -54,5 +56,17 @@ class PhotosController < ApplicationController
   # c единственным полем photo
   def photo_params
     params.fetch(:photo, {}).permit(:photo)
+  end
+
+  def notify_subscribers(event, photo)
+    # Собираем всех подписчиков и автора события в массив мэйлов, исключаем повторяющиеся и автора фотографии
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq - [photo.user.email]
+
+    # По адресам из этого массива делаем рассылку
+    # Как и в подписках, берём EventMailer и его метод comment с параметрами
+    # И отсылаем в том же потоке
+    all_emails.each do |mail|
+      EventMailer.photo(event, photo, mail).deliver_now
+    end
   end
 end
