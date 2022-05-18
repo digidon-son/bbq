@@ -25,7 +25,7 @@ class Subscription < ApplicationRecord
   private
 
   def email_in_use
-    errors.add(:user_email, :busy) if User.where(email: user_email.downcase).first
+    errors.add(:user_email, :busy) if User.where(email: user_email.downcase).exists?
   end
 
   def organizer_cant_subscribe
