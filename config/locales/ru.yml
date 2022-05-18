@@ -94,3 +94,12 @@ ru:
       owner: "Организатор"
       title: "Новое фото"
       photo: "Фотография"
+  
+  
+  devise:
+    password:
+      change_new_password: "Введите новый пароль"
+      new_password: "Новый пароль"
+      characters_minimum: "символов минимум"
+      confirm_new_password: "Подтвердите новый пароль"
+      change_my_password: "Изменить мой пароль"
