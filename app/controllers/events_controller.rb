@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   before_action :set_current_user_event, only: %i[edit update destroy]
 
   # Проверяем наличие и правильность пинкода
-  before_action :password_guard!, only: [:show]
+  before_action :password_guard!, only: %i[show]
 
   def create
     @event = current_user.events.build(event_params)

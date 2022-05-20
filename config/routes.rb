@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :photos
   devise_for :users
 
   root 'events#index'
@@ -14,5 +13,6 @@ Rails.application.routes.draw do
     post :show, on: :member
   end
 
+  resources :photos
   resources :users, only: %i[show edit update]
 end
