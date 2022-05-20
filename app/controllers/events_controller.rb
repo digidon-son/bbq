@@ -57,19 +57,24 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :address, :datetime, :description)
+    params.require(:event).permit(:title, :address, :datetime, :description, :pincode)
   end
 
   def password_guard!
     return true if @event.pincode.blank?
     return true if signed_in? && current_user == @event.user
 
+    # Юзер на чужом событии (или не за логином). Проверяем, правильно ли передал
+    # пинкод. Если правильно, запоминаем в куках этого юзера этот пинкод для
+    # данного события.
     if params[:pincode].present? && @event.pincode_valid?(params[:pincode])
       cookies.permanent["events_#{@event.id}_pincode"] = params[:pincode]
     end
 
-    unless @event.pincode_valid?(cookies.permanent["events_#{@event.id}_pincode"])
-      show[:alert] = I18n.t('controllers.events.wrong_pincode') if params[:pincode].present?
+    # Проверяем — верный ли в куках пинкод, если нет — ругаемся и рендерим форму
+    pincode = cookies.permanent["events_#{@event.id}_pincode"]
+    unless @event.pincode_valid?(pincode)
+      flash.now[:alert] = I18n.t('controllers.events.wrong_pincode') if params[:pincode].present?
       render 'password_form'
     end
   end

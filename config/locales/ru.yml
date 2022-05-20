@@ -26,6 +26,7 @@ ru:
         address: "Место проведения"
         datetime: "Дата и время"
         description: "Описание"
+        pincode: "Пин-код"
         title: "Название"
       photo:
         photo: "Фотография"
@@ -50,6 +51,7 @@ ru:
       destroyed: "Вы удалили мероприятие"
       created: "Вы создали новое мероприятие"
       updated: "Вы обновили мероприятие"
+      wrong_pincode: "Неверный пинкод!"
     photos:
       created: "Вы добавили фотографию к событию"
       destroyed: "Вы удалили фотографию"
@@ -94,8 +96,7 @@ ru:
       owner: "Организатор"
       title: "Новое фото"
       photo: "Фотография"
-  
-  
+
   devise:
     password:
       change_new_password: "Введите новый пароль"
@@ -103,3 +104,9 @@ ru:
       characters_minimum: "символов минимум"
       confirm_new_password: "Подтвердите новый пароль"
       change_my_password: "Изменить мой пароль"
+  events:
+    password_form:
+      pincode: "Пин-код"
+      save: 'Сохранить'
+      main: 'На главную'
+      pin_only_access: 'Доступ только по пин-коду'
