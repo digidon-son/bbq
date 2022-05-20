@@ -6,7 +6,7 @@
 
 ----------------------
 
-<%= t '.event' %> <%= @event.title %>
-<%= t '.datetime' %> <%= l @event.datetime %>
-<%= t '.owner' %> <%= @event.user.name %>
+<%= t '.event' %> <%= @photo.event.title %>
+<%= t '.datetime' %> <%= l @photo.event.datetime %>
+<%= t '.owner' %> <%= @photo.event.user.name %>
 <%= t '.photo' %> <%= link_to image_tag(@photo.photo.thumb.url), @photo.photo.url %>
