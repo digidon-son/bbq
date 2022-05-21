@@ -6,110 +6,110 @@ ru:
         subscription:
           attributes:
             user:
-              organizer: 'не может подписываться на своё событие'
+              organizer: не может подписываться на своё событие
             user_email:
-              busy: 'занят. Попробуйте другой email'
+              busy: занят. Попробуйте другой email
     # Перевод названия моделей
     models:
-      comment: 'Комментарий'
-      event: 'Событие'
-      photo: 'Фотография'
-      subscription: 'Подписка'
-      user: 'Пользователь'
+      comment: Комментарий
+      event: Событие
+      photo: Фотография
+      subscription: Подписка
+      user: Пользователь
 
     # Перевод названий аттрибутов моделей
     attributes:
       comment:
-        body: 'Поле комментария'
-        user_name: 'Имя пользователя'
+        body: Поле комментария
+        user_name: Имя пользователя
       event:
-        address: 'Место проведения'
-        datetime: 'Дата и время'
-        description: 'Описание'
-        pincode: 'Пин-код'
-        title: 'Название'
+        address: Место проведения
+        datetime: Дата и время
+        description: Описание
+        pincode: Пин-код
+        title: Название
       photo:
-        photo: 'Фотография'
+        photo: Фотография
       subscription:
-        user_email: 'Email'
-        user_name: 'Имя пользователя'
-        user: 'Пользователь'
+        user_email: Email
+        user_name: Имя пользователя
+        user: Пользователь
       user:
-        avatar: 'Аватар'
-        email: 'Email'
-        name: 'Имя'
-        password: 'Пароль'
-        password_confirmation: 'Подтверждение пароля'
+        avatar: Аватар
+        email: Email
+        name: Имя
+        password: Пароль
+        password_confirmation: Подтверждение пароля
 
   # Перевод названия приложения и компании-разработчика
   app:
-    company: 'Хороший программист'
-    name: 'Шашлыки'
-  
+    company: Хороший программист
+    name: Шашлыки
+
   # Перевод плашки подтверждения
   confirm:
-    are_you_sure: 'Вы уверены?'
-    
+    are_you_sure: Вы уверены?
+
   # Перевод сообщений, которые отправляет контроллер
   controllers:
     comments:
-      created: 'Ваш комментарий добавлен'
-      destroyed: 'Комментарий удален'
-      error: 'Ошибка с комментарием'
+      created: Ваш комментарий добавлен
+      destroyed: Комментарий удален
+      error: Ошибка с комментарием
     events:
-      destroyed: 'Вы удалили мероприятие'
-      created: 'Вы создали новое мероприятие'
-      updated: 'Вы обновили мероприятие'
-      wrong_pincode: 'Неверный пинкод!'
+      destroyed: Вы удалили мероприятие
+      created: Вы создали новое мероприятие
+      updated: Вы обновили мероприятие
+      wrong_pincode: Неверный пинкод!
     photos:
-      created: 'Вы добавили фотографию к событию'
-      destroyed: 'Вы удалили фотографию'
-      error: 'Что-то не так с фотографией'
+      created: Вы добавили фотографию к событию
+      destroyed: Вы удалили фотографию
+      error: Что-то не так с фотографией
     subscriptions:
-      created: 'Вы подписаны на это событие'
-      destroyed: 'Участник отписан'
-      error: 'Подписка/отписка не сработала'
+      created: Вы подписаны на это событие
+      destroyed: Участник отписан
+      error: Подписка/отписка не сработала
     users:
-      updated: 'Вы обновили свой профиль'
+      updated: Вы обновили свой профиль
 
   # Переводы содержимого письма
   event_mailer:
     comment:
-      author: 'Автор:'
-      datetime: 'Время проведения:'
-      event: 'Событие:'
-      owner: 'Организатор:'
+      author: "Автор:"
+      datetime: "Время проведения:"
+      event: "Событие:"
+      owner: "Организатор:"
       subject: "%{commenter} оставил новый комментарий"
       title: "Новый комментарий для события: %{event}"
     subscription:
-      author: 'Автор'
-      datetime: 'Состоится'
-      email: 'Email'
-      event: 'Событие'
-      name: 'Имя'
-      owner: 'Организатор'
+      author: Автор
+      datetime: Состоится
+      email: Email
+      event: Событие
+      name: Имя
+      owner: Организатор
       subject: "Новая подписка на %{event_name}"
-      title: 'Новая подписка'
+      title: Новая подписка
     photo:
-      author: 'Автор'
-      datetime: 'Состоится'
-      event: 'Событие'
-      name: 'Имя'
-      owner: 'Организатор'
-      photo: 'Фотография'
+      author: Автор
+      datetime: Состоится
+      event: Событие
+      name: Имя
+      owner: Организатор
+      photo: Фотография
       subject: "Добавлена новая фотография для %{event_name}"
-      title: 'Новое фото'
+      title: Новое фото
 
   devise:
     password:
-      change_new_password: 'Введите новый пароль'
-      new_password: 'Новый пароль'
-      characters_minimum: 'символов минимум'
-      confirm_new_password: 'Подтвердите новый пароль'
-      change_my_password: 'Изменить мой пароль'
+      change_new_password: Введите новый пароль
+      new_password: Новый пароль
+      characters_minimum: символов минимум
+      confirm_new_password: Подтвердите новый пароль
+      change_my_password: Изменить мой пароль
   events:
     password_form:
-      pincode: 'Пин-код'
-      save: 'Сохранить'
-      main: 'На главную'
-      pin_only_access: 'Доступ только по пин-коду'
+      pincode: Пин-код
+      save: Сохранить
+      main: На главную
+      pin_only_access: Доступ только по пин-коду
