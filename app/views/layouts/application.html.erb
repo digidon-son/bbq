@@ -9,13 +9,13 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=<%= ENV['YA_MAP_KEY'] %>"
-    type="text/javascript"></script>
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=<%= ENV['YA_MAP_KEY'] %>"
+    type="text/javascript"></script>
 
   <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
   <!--[if lt IE 9]>
