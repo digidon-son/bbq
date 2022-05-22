@@ -19,16 +19,15 @@ class AssetUrlProcessor
     # don't know why, copy from other processor
     context = input[:environment].context_class.new(input)
 
-    data = input[:data].gsub(/url\((.+?)\)/) do |match|
-      path = context.asset_path($1)
+    data = input[:data].gsub(/url\((.+?)\)/) do |_match|
+      path = context.asset_path(Regexp.last_match(1))
       "url(#{path})"
     end
 
-    { data: data }
+    { data: }
   end
 end
 
-
 Sprockets.register_postprocessor 'text/css', AssetUrlProcessor
 
-Rails.application.config.assets.precompile += %w[application.js]
+# Rails.application.config.assets.precompile += %w[application.js]
