@@ -14,8 +14,6 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules/bootstrap
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
 
-# Rails.application.config.assets.precompile += %w(application.js)
-
 class AssetUrlProcessor
   def self.call(input)
     # don't know why, copy from other processor
@@ -35,3 +33,5 @@ class AssetUrlProcessor
 end
 
 Sprockets.register_postprocessor 'text/css', AssetUrlProcessor
+
+Rails.application.config.assets.precompile += %w[application.js]
