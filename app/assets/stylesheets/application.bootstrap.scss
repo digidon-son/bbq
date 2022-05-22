@@ -2,6 +2,10 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import 'users.css';
 
+.user-avatar .img-icon {
+  margin-top: -2px;
+  height: 20px;
+}
 
 .event-info {
   position: relative;
@@ -15,8 +19,10 @@
   width: 100%;
   z-index: -1;
 
-  top: 0; bottom: 0;
-  left: 0; right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 
   background-size: cover;
   background-position: center;
@@ -41,7 +47,7 @@
 }
 
 .event-info-inner {
-  background:rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .event-map {
@@ -67,7 +73,8 @@
 }
 
 
-.img-icon, .img-icon-small {
+.img-icon,
+.img-icon-small {
   height: 50px;
   width: auto;
   border-radius: 50%;
