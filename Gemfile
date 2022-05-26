@@ -10,6 +10,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'dotenv-rails'
 gem 'fog-aws'
+gem "jsbundling-rails"
 gem 'jquery-rails'
 gem 'mailjet'
 gem 'puma', '~> 5.0'
