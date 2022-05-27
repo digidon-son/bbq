@@ -113,3 +113,11 @@ ru:
       save: Сохранить
       main: На главную
       pin_only_access: Доступ только по пин-коду
+
+  # Перевод вьюхи фотографий
+  photos:
+    photo_title:
+      added: 'Добавил:'
+      deleted: Удалить
+      destroy_confirm: Вы точно хотите удалить фотографию?
+      
