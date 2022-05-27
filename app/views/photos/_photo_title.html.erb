@@ -1,0 +1,11 @@
+<span class='me-2'><%= t('.added') %></span>
+
+<%= render partial: 'users/user', object: photo.user %>
+<% if current_user_has_access?(photo) %>
+  <%= button_to t('.deleted'),
+                event_photo_path(photo.event, photo),
+                form: { data: { turbo_confirm: t('.destroy_confirm') } },
+                method: :delete,
+                class: 'bg-transparent border-0 text-danger',
+                form_class: 'd-inline'%>
+<% end %>
