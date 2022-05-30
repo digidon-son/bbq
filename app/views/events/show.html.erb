@@ -1,10 +1,8 @@
-
 <div class="event">
   <div class="event-info row">
     <div class="col-md-12">
       <%= content_tag 'div', '', class: 'event-background',
                       style: "background-image: url(#{event_photo(@event)})" %>
-
       <div class="event-info-inner row">
         <div class="col-md-6">
           <div class="event-description">
@@ -16,7 +14,6 @@
             </h3>
             <p><%= @event.description %></p>
           </div>
-
           <% if current_user_has_access?(@event) %>
             <div class="buffer-both">
               <%= link_to 'Изменить', edit_event_path(@event),
@@ -27,7 +24,6 @@
       </div>
     </div>
   </div>
-
   <div class="row">
     <div class="col-md-8">
       <div>
@@ -35,7 +31,7 @@
         data-address="<%= @event.address %>"
         style="width: 100%; height: 200px">
         </div>
-      </div> 
+      </div>
       <div class="event-photos mt-2">
         <div>
           <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
@@ -47,14 +43,12 @@
       <div class="event-comments buffer-top mt-2">
         <%= render partial: 'comments/form',
                    locals: { comment: @new_comment || @event.comments.build } %>
-
         <div class="buffer-both">
           <%= render partial: 'comments/comment',
                      collection: @event.comments.except(@new_comment) %>
         </div>
       </div>
     </div>
-
     <div class="col-md-4">
       <div class="event-owner">
         <h4>Зовет:</h4>
@@ -79,7 +73,7 @@
               subscription: @new_subscription || @event.subscriptions.build
             } %>
           </div>
-      <% end %>
+        <% end %>
       </div>
     </div>
   </div>

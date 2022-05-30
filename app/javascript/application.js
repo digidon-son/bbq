@@ -1,5 +1,6 @@
 // Entry point for the build script in your package.json
-import "@hotwired/turbo-rails";
+import "@hotwired/turbo-rails"
 import "./map"
-import "lightbox2"
+import "jquery"
+import "./lightbox"
 import * as bootstrap from "bootstrap"
